@@ -158,7 +158,7 @@ def hello(proto='https'):
                     print('hello360: attempt %d returned non-id: %s' % (attempt, server_id))
             except Exception as e:
                 print('hello360: attempt %d failed: %s' % (attempt, e))
-            if attempt < 3:
+            if attempt < 6:
                 time.sleep(5)
 
     if len(server_id) == 24:
