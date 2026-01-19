@@ -64,7 +64,8 @@ class Plugin(plugins.BasePlugin):
                 logging.error("Error in periodic plugin update: %s", e)
 
             try:
-                interval = self.config.getint('agent', 'plugin_update_interval')
+                interval = self.config.getint(__name__, 'interval')
+                interval = max(interval, 60)
             except Exception:
                 interval = 1800  # default 30 minutes
             time.sleep(interval)
