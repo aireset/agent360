@@ -52,7 +52,7 @@ except ImportError:
     from urllib import urlencode
     from urllib2 import urlopen, Request, HTTPError
 
-__version__ = '1.3.4'
+__version__ = '1.3.5'
 __FILEABSDIRNAME__ = os.path.dirname(os.path.abspath(__file__))
 sslContext = ssl.create_default_context(cafile=certifi.where())
 
@@ -148,7 +148,7 @@ def hello(proto='https'):
             'tags': tags,
             'domains': domains,
         }).encode("utf-8")
-    
+
         for attempt in range(1, 6):
             try:
                 server_id = urlopen(url, data=payload, context=sslContext).read().decode()
