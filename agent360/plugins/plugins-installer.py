@@ -109,7 +109,7 @@ class Plugin(plugins.BasePlugin):
         return updated
 
     def _get_connection(self, proto='https'):
-        api_host = self.config.get('data', 'api_host')
+        api_host = self.config.get('data', 'hello_api_host')
         if (proto == 'https'):
             ctx = ssl.create_default_context(cafile=certifi.where())
             if sys.version_info >= (3,):
